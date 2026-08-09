@@ -21,7 +21,7 @@ through to whichever game they want.
 | Catan Statistics Tracker | [catan-statistics](https://github.com/TimothyHadfield/catan-statistics) | [open](https://timothyhadfield.github.io/catan-statistics/) |
 | BANK Game Evolution | [bank-evolution](https://github.com/TimothyHadfield/bank-evolution) | [open](https://timothyhadfield.github.io/bank-evolution/) |
 | BANK AI Trainer | [bank-ai-trainer](https://github.com/TimothyHadfield/bank-ai-trainer) | [open](https://timothyhadfield.github.io/bank-ai-trainer/) |
-| Venture Cheat | [venture-cheat](https://github.com/TimothyHadfield/venture-cheat) | [open](https://timothyhadfield.github.io/venture-cheat/) |
+| Venture Lab | [venture-lab](https://github.com/TimothyHadfield/venture-lab) | [open](https://timothyhadfield.github.io/venture-lab/) |
 
 ## Adding a new game
 
