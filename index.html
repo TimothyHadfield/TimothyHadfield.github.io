@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Board &amp; Card Games — Timothy Hadfield</title>
+<meta name="description" content="A collection of web tools, trackers and companions for board and card games.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127922;</text></svg>">
+<style>
+  :root {
+    --bg: #0f1117;
+    --bg-soft: #161923;
+    --card: #1a1e2b;
+    --card-hover: #212636;
+    --line: #2a3042;
+    --text: #e8eaf0;
+    --muted: #969db4;
+    --accent: #6ea8fe;
+    --accent-warm: #f0b354;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.28);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---------- header ---------- */
+
+  header {
+    padding: 88px 0 12px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 48px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent-warm);
+    margin: 0 0 14px;
+    font-weight: 600;
+  }
+
+  h1 {
+    margin: 0 0 18px;
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    font-weight: 700;
+  }
+
+  .lede {
+    margin: 0 0 40px;
+    max-width: 62ch;
+    color: var(--muted);
+    font-size: 18px;
+  }
+
+  /* ---------- grid ---------- */
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: transform .16s ease, border-color .16s ease, background .16s ease;
+  }
+
+  .card:hover,
+  .card:focus-visible {
+    transform: translateY(-3px);
+    border-color: #3d4560;
+    background: var(--card-hover);
+    outline: none;
+  }
+
+  .card:focus-visible { box-shadow: 0 0 0 3px rgba(110,168,254,.45); }
+
+  .icon {
+    font-size: 34px;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .card h2 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    font-weight: 650;
+    letter-spacing: -.01em;
+  }
+
+  .card p {
+    margin: 0 0 20px;
+    color: var(--muted);
+    font-size: 14.5px;
+    flex: 1;
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 13px;
+  }
+
+  .tag {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 3px 11px;
+    color: var(--muted);
+    background: var(--bg-soft);
+  }
+
+  .go {
+    margin-left: auto;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .card:hover .go { text-decoration: underline; }
+
+  /* ---------- footer ---------- */
+
+  footer {
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card { transition: none; }
+    .card:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Timothy Hadfield</p>
+    <h1>Board &amp; Card Games</h1>
+    <p class="lede">
+      Companions, trackers and simulators I've built for games I actually play — each one
+      a self-contained web app you can open and use right now. Every project lives in its
+      own repository; the links below go straight to the live version.
+    </p>
+  </header>
+
+  <main class="grid">
+
+    <a class="card" href="https://timothyhadfield.github.io/secret-hitler-companion/">
+      <div class="icon">🕵️</div>
+      <h2>Secret Hitler Companion</h2>
+      <p>
+        A table companion for Secret Hitler. Randomizes seating, tracks the boards and piles,
+        and runs a live hypergeometric model of what each government's draw actually was —
+        including what changes if a President lied.
+      </p>
+      <div class="meta">
+        <span class="tag">Board game</span>
+        <span class="tag">Probability</span>
+        <span class="go">Open →</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://timothyhadfield.github.io/wavelength/">
+      <div class="icon">🌊</div>
+      <h2>Wavelength</h2>
+      <p>
+        The party game where a psychic gives a one-word clue and their team guesses where the
+        hidden target sits on a spectrum. Full team play with scoring, on one shared screen.
+      </p>
+      <div class="meta">
+        <span class="tag">Party game</span>
+        <span class="tag">Play now</span>
+        <span class="go">Open →</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://timothyhadfield.github.io/catan-statistics/">
+      <div class="icon">🎲</div>
+      <h2>Catan Statistics Tracker</h2>
+      <p>
+        Log every dice roll of a game of Catan and watch the real distribution drift away from
+        the theoretical one. Build your board hex by hex to see which settlement spots are
+        actually paying out.
+      </p>
+      <div class="meta">
+        <span class="tag">Board game</span>
+        <span class="tag">Statistics</span>
+        <span class="go">Open →</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://timothyhadfield.github.io/bank-evolution/">
+      <div class="icon">🧬</div>
+      <h2>BANK Game Evolution</h2>
+      <p>
+        Species of BANK players, each with its own risk appetite, thrown into a tournament
+        against one another. Watch selection pressure discover the winning moment to call
+        "bank" over thousands of generations.
+      </p>
+      <div class="meta">
+        <span class="tag">Dice game</span>
+        <span class="tag">Simulation</span>
+        <span class="go">Open →</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://timothyhadfield.github.io/bank-ai-trainer/">
+      <div class="icon">🤖</div>
+      <h2>BANK AI Trainer</h2>
+      <p>
+        The same dice game, approached differently: a reinforcement-learning agent trained with
+        Q-Learning and Deep Q-Networks until it works out when to bank and when to push its luck.
+      </p>
+      <div class="meta">
+        <span class="tag">Dice game</span>
+        <span class="tag">Machine learning</span>
+        <span class="go">Open →</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://timothyhadfield.github.io/venture-cheat/">
+      <div class="icon">🃏</div>
+      <h2>Venture Cheat</h2>
+      <p>
+        A move advisor and endgame solver for the card game Venture, built as a friendly proof
+        that I could break my brother's game. Runs in the browser console against my own account.
+      </p>
+      <div class="meta">
+        <span class="tag">Card game</span>
+        <span class="tag">Solver</span>
+        <span class="go">Open →</span>
+      </div>
+    </a>
+
+  </main>
+
+  <footer>
+    <p>
+      Every game above is its own repository —
+      browse them all on <a href="https://github.com/TimothyHadfield">GitHub</a>.
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
