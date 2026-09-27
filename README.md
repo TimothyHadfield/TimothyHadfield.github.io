@@ -3,6 +3,14 @@
 The landing page for my board and card game projects, served at the root of my GitHub
 Pages domain: **https://timothyhadfield.github.io/**
 
+**[▶ Open the game hub](https://timothyhadfield.github.io/)** · works on phone and laptop
+
+<p align="center">
+  <img src="docs/screenshots/desktop.png" alt="The game hub on a laptop: a grid of cards for each game" width="68%">
+  &nbsp;
+  <img src="docs/screenshots/phone.png" alt="The game hub on a phone" width="24%">
+</p>
+
 ## How this works
 
 This repo holds *only* the landing page. Each game keeps its own repository and its own
