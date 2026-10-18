@@ -12,6 +12,7 @@ Keep the hub's links to every game working. No feature work is open.
 | Landing page (`index.html`) | Live, 7 game cards, all links 200 (2026-10-16) |
 | README showcase | Done (screenshots + table) |
 | Tests | None (static page); verified with phone-view |
+| Site icon (2026-10-17) | `icon.svg` (blue die on dark) + `apple-touch-icon.png` 180 px, linked in `index.html`; replaced the emoji data-URI favicon |
 
 ## Authorized next steps
 None.
