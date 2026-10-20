@@ -73,6 +73,17 @@
 
   /* ---------- grid ---------- */
 
+  .section-title {
+    margin: 48px 0 16px;
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  main > .section-title:first-child { margin-top: 0; }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -177,7 +188,79 @@
     </p>
   </header>
 
-  <main class="grid">
+  <main>
+
+  <h2 class="section-title">Card games</h2>
+  <section class="grid">
+
+    <a class="card" href="https://timothyhadfield.github.io/dominion/">
+      <div class="icon">👑</div>
+      <h2>Dominion</h2>
+      <p>
+        Play the Dominion base game against measured computers or friends online, with live
+        draw odds and the best plan for any kingdom.
+      </p>
+      <div class="meta">
+        <span class="tag">Card game</span>
+        <span class="tag">Play online</span>
+        <span class="go">Open →</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://timothyhadfield.github.io/cribbage/">
+      <div class="icon">♠️</div>
+      <h2>Cribbage</h2>
+      <p>
+        Two-player cribbage to 121 against a computer that searches every possible discard
+        exactly and models the risk of each pegging play. Deal, cut, pegging and the show,
+        all in the browser.
+      </p>
+      <div class="meta">
+        <span class="tag">Card game</span>
+        <span class="tag">Play now</span>
+        <span class="go">Open →</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://timothyhadfield.github.io/venture-lab/">
+      <div class="icon">🃏</div>
+      <h2>Venture Lab</h2>
+      <p>
+        A perfect-information board for studying Venture positions: the draw pile laid out in
+        order, the opponent's hand face-up, and a potential readout under every pile. Comes with
+        solitaire computers — the best of them, The Patient, medians 220.
+      </p>
+      <div class="meta">
+        <span class="tag">Card game</span>
+        <span class="tag">Analysis</span>
+        <span class="go">Open →</span>
+      </div>
+    </a>
+
+  </section>
+
+  <h2 class="section-title">Board games</h2>
+  <section class="grid">
+
+    <a class="card" href="https://timothyhadfield.github.io/catan-statistics/">
+      <div class="icon">🎲</div>
+      <h2>Catan Statistics Tracker</h2>
+      <p>
+        Log every dice roll of a game of Catan and watch the real distribution drift away from
+        the theoretical one. Build your board hex by hex to see which settlement spots are
+        actually paying out.
+      </p>
+      <div class="meta">
+        <span class="tag">Board game</span>
+        <span class="tag">Statistics</span>
+        <span class="go">Open →</span>
+      </div>
+    </a>
+
+  </section>
+
+  <h2 class="section-title">Party &amp; hidden-role</h2>
+  <section class="grid">
 
     <a class="card" href="https://timothyhadfield.github.io/secret-hitler-companion/">
       <div class="icon">🕵️</div>
@@ -208,35 +291,10 @@
       </div>
     </a>
 
-    <a class="card" href="https://timothyhadfield.github.io/cribbage/">
-      <div class="icon">♠️</div>
-      <h2>Cribbage</h2>
-      <p>
-        Two-player cribbage to 121 against a computer that searches every possible discard
-        exactly and models the risk of each pegging play. Deal, cut, pegging and the show,
-        all in the browser.
-      </p>
-      <div class="meta">
-        <span class="tag">Card game</span>
-        <span class="tag">Play now</span>
-        <span class="go">Open →</span>
-      </div>
-    </a>
+  </section>
 
-    <a class="card" href="https://timothyhadfield.github.io/catan-statistics/">
-      <div class="icon">🎲</div>
-      <h2>Catan Statistics Tracker</h2>
-      <p>
-        Log every dice roll of a game of Catan and watch the real distribution drift away from
-        the theoretical one. Build your board hex by hex to see which settlement spots are
-        actually paying out.
-      </p>
-      <div class="meta">
-        <span class="tag">Board game</span>
-        <span class="tag">Statistics</span>
-        <span class="go">Open →</span>
-      </div>
-    </a>
+  <h2 class="section-title">Dice &amp; AI experiments</h2>
+  <section class="grid">
 
     <a class="card" href="https://timothyhadfield.github.io/bank-evolution/">
       <div class="icon">🧬</div>
@@ -267,20 +325,7 @@
       </div>
     </a>
 
-    <a class="card" href="https://timothyhadfield.github.io/venture-lab/">
-      <div class="icon">🃏</div>
-      <h2>Venture Lab</h2>
-      <p>
-        A perfect-information board for studying Venture positions: the draw pile laid out in
-        order, the opponent's hand face-up, and a potential readout under every pile. Comes with
-        solitaire computers — the best of them, The Patient, medians 220.
-      </p>
-      <div class="meta">
-        <span class="tag">Card game</span>
-        <span class="tag">Analysis</span>
-        <span class="go">Open →</span>
-      </div>
-    </a>
+  </section>
 
   </main>
 
