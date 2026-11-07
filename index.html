@@ -82,7 +82,8 @@
     font-weight: 600;
   }
 
-  main > .section-title:first-child { margin-top: 0; }
+  main > .section-title:first-child,
+  main > .no-match + .section-title { margin-top: 0; }
 
   .grid {
     display: grid;
@@ -156,6 +157,26 @@
 
   .card:hover .go { text-decoration: underline; }
 
+  /* ---------- search ---------- */
+
+  .search {
+    display: block;
+    width: 100%;
+    margin: 0 0 24px;
+    padding: 12px 16px;
+    font: inherit;
+    font-size: 16px; /* 16px+ so iPhone Safari doesn't zoom in */
+    color: var(--text);
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    outline: none;
+  }
+  .search:focus { border-color: var(--accent); }
+  .search::placeholder { color: var(--muted); }
+  .no-match { color: var(--muted); display: none; }
+  [hidden] { display: none !important; }
+
   /* ---------- footer ---------- */
 
   footer {
@@ -186,9 +207,11 @@
       a self-contained web app you can open and use right now. Every project lives in its
       own repository; the links below go straight to the live version.
     </p>
+    <input class="search" id="search" type="search" placeholder="Search games" aria-label="Search games" autocomplete="off" enterkeyhint="search">
   </header>
 
   <main>
+  <p class="no-match" id="no-match">No games match.</p>
 
   <h2 class="section-title">Card games</h2>
   <section class="grid">
@@ -546,7 +569,7 @@
       </div>
     </a>
 
-    <a class="card" href="https://timothyhadfield.github.io/mystery-face/">
+    <a class="card" href="https://timothyhadfield.github.io/mystery-face/" data-k="guess who faces characters celebrities">
       <div class="icon">🕵️</div>
       <h2>Mystery Face</h2>
       <p>
@@ -691,5 +714,30 @@
   </footer>
 
 </div>
+<script>
+  // Search games (Tim, 2026-11-06): filters cards by title, text, tags and extra keywords (data-k)
+  (function () {
+    var box = document.getElementById('search');
+    var none = document.getElementById('no-match');
+    var cards = [].slice.call(document.querySelectorAll('main .card'));
+    var norm = function (s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); };
+    var text = cards.map(function (c) { return norm(c.textContent + ' ' + (c.dataset.k || '')); });
+    box.addEventListener('input', function () {
+      var words = norm(box.value).split(' ').filter(Boolean);
+      var shown = 0;
+      cards.forEach(function (c, i) {
+        var ok = words.every(function (w) { return text[i].indexOf(w) >= 0; });
+        c.hidden = !ok; if (ok) shown++;
+      });
+      document.querySelectorAll('main .grid').forEach(function (g) {
+        var any = g.querySelector('.card:not([hidden])');
+        g.hidden = !any;
+        var t = g.previousElementSibling;
+        if (t && t.classList.contains('section-title')) t.hidden = !any;
+      });
+      none.style.display = shown ? 'none' : 'block';
+    });
+  })();
+</script>
 </body>
 </html>
